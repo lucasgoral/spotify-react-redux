@@ -1,7 +1,3 @@
-/*
- * action types
- */
-
 export const SET_TRACK = "SET_TRACK";
 export const SET_TRACKS = "SET_TRACKS";
 export const LOG_IN = "LOG_IN";
@@ -25,5 +21,16 @@ export const searchTracks = (token, query) => {
       .catch(error => {
         console.error("Error:", error);
       });
+  };
+};
+
+export const setTrack = trackNumber => {
+  console.log("track is set");
+  console.log(trackNumber);
+  return dispatch => {
+    dispatch({
+      type: SET_TRACK,
+      trackNumber: trackNumber
+    });
   };
 };

@@ -70,7 +70,8 @@ const App = ({ logged, logIn, dispatch }) => {
   } else {
     return (
       <div className="App">
-        <Search></Search>
+        <Search />
+        <Player />
         <Playlist />
       </div>
     );

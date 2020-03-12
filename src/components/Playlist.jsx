@@ -1,18 +1,12 @@
-import React from 'react';
-import './../scss/Playlist.scss';
-import { connect } from 'react-redux';
-import { SET_TRACK } from './../actions/Actions';
+import React from "react";
+import "./../scss/Playlist.scss";
+import { connect } from "react-redux";
+import { setTrack } from "./../actions/Actions";
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     tracks: state.playlist.tracks,
     active: state.player.trackNumber
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    dispatch
   };
 };
 
@@ -25,17 +19,21 @@ const Playlist = ({ tracks, dispatch, active }) => {
             return (
               <li key={track.id}>
                 <button
-                  className={active === index ? 'Playlist__item active' : 'Playlist__item' }
+                  className={
+                    active === index
+                      ? "Playlist__item active"
+                      : "Playlist__item"
+                  }
                   onClick={() => {
-                    dispatch({
-                      type: SET_TRACK,
-                      trackNumber: index
-                    });
+                    setTrack(index);
+                    console.log("elo");
                   }}
                 >
                   <div
                     className="Playlist__image"
-                    style={{ backgroundImage: `url("${track.album.images[0].url}")` }}
+                    style={{
+                      backgroundImage: `url("${track.album.images[0].url}")`
+                    }}
                   />
 
                   <div className="Playlist__info">
@@ -52,4 +50,4 @@ const Playlist = ({ tracks, dispatch, active }) => {
   );
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Playlist);
+export default connect(mapStateToProps)(Playlist);

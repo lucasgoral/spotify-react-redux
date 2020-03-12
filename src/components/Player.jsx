@@ -16,8 +16,8 @@ const mapStateToProps = state => {
     };
   }
   return {
-    artistName: "Artist",
-    songName: "Song",
+    artistName: "",
+    songName: "",
     image: "",
     mp3Url: ""
   };
@@ -49,4 +49,4 @@ const Player = ({ artistName, image, songName, mp3Url }) => {
   );
 };
 
-export default connect(mapStateToProps, null)(Player);
+export default connect(mapStateToProps)(Player);

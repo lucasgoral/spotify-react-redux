@@ -1,0 +1,55 @@
+import React from 'react';
+import './../scss/Playlist.scss';
+import { connect } from 'react-redux';
+import { SET_TRACK } from './../actions/Actions';
+
+const mapStateToProps = (state) => {
+  return {
+    tracks: state.playlist.tracks,
+    active: state.player.trackNumber
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    dispatch
+  };
+};
+
+const Playlist = ({ tracks, dispatch, active }) => {
+  return (
+    <div className="Playlist">
+      <ul className="Playlist__list">
+        {tracks.map((track, index) => {
+          if (track.preview_url) {
+            return (
+              <li key={track.id}>
+                <button
+                  className={active === index ? 'Playlist__item active' : 'Playlist__item' }
+                  onClick={() => {
+                    dispatch({
+                      type: SET_TRACK,
+                      trackNumber: index
+                    });
+                  }}
+                >
+                  <div
+                    className="Playlist__image"
+                    style={{ backgroundImage: `url("${track.album.images[0].url}")` }}
+                  />
+
+                  <div className="Playlist__info">
+                    <h3>{track.artists[0].name}</h3>
+                    <h4>{track.name}</h4>
+                  </div>
+                </button>
+              </li>
+            );
+          } else return null;
+        })}
+      </ul>
+    </div>
+  );
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Playlist);

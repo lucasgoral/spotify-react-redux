@@ -50,6 +50,7 @@
         text-align: left;
         color: $primary-color;
         max-width: calc(100% - 165px);
+        letter-spacing: 1px;
         h1 {
             font-size: 20px;
             @media (max-width: 768px) {

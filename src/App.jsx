@@ -1,5 +1,5 @@
 import React from "react";
-import "./scss/App.scss";
+import "./scss/index.scss";
 import Player from "./components/Player";
 import Playlist from "./components/Playlist";
 import SpotifyLogin from "react-spotify-login";
@@ -31,7 +31,7 @@ function mapStateToProps(state) {
   };
 }
 
-const App = ({ logged, logIn, dispatch }) => {
+const App = ({ logged, logIn }) => {
   const onSuccess = response => {
     logIn(response.access_token);
   };

@@ -1,6 +1,5 @@
 import { connect } from "react-redux";
 import React from "react";
-import "../scss/Controls.scss";
 import Previous from "../images/Previous.svg";
 import Pause from "../images/Pause.svg";
 import Play from "../images/Play.svg";

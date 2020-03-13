@@ -1,6 +1,4 @@
 import React from "react";
-import "./../scss/Player.scss";
-
 import Sound from "./Sound";
 import { connect } from "react-redux";
 

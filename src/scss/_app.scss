@@ -1,0 +1,21 @@
+div {
+    overflow: hidden;
+}
+
+.spotify-bt {
+    color: #fff;
+    padding: 2em 3em;
+    font-size: 1.2em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    border-radius: 0.5em;
+    border: 0;
+    background: #472f91;
+    cursor: pointer;
+    transition: opacity 0.4s;
+    &:hover {
+        opacity: 0.85;
+    }
+}

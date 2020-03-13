@@ -1,5 +1,4 @@
 import React from "react";
-import "./../scss/Playlist.scss";
 import { connect } from "react-redux";
 import { setTrack } from "./../actions/Actions";
 
@@ -43,6 +42,7 @@ const Playlist = ({ tracks, dispatch, active }) => {
               </li>
             );
           }
+          return;
         })}
       </ul>
     </div>

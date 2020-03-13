@@ -16,4 +16,8 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
-$primary-color: salmon;
+@import "app";
+@import "controls";
+@import "player";
+@import "playlist";
+@import "progressBar";

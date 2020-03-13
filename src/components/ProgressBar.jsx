@@ -1,5 +1,4 @@
 import React from "react";
-import "./../scss/ProgressBar.scss";
 
 const ProgressBar = props => {
   const currentTime = isNaN(props.currentTime) ? 0 : props.currentTime;

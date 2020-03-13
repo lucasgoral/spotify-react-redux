@@ -8,6 +8,7 @@ const ProgressBar = props => {
     return (s - (s %= 60)) / 60 + (9 < s ? ":" : ":0") + s;
   };
   const time = toMinutes(Math.floor(currentTime));
+  const fullTime = toMinutes(Math.floor(duration));
   const handleClick = e => {
     const x = e.pageX - e.target.offsetLeft;
     const elWidth = e.target.offsetWidth;
@@ -25,9 +26,7 @@ const ProgressBar = props => {
           ></div>
         </div>
       </div>
-      <div className="ProgressBar__full-time">
-        {toMinutes(Math.floor(duration))}
-      </div>
+      <div className="ProgressBar__full-time">{fullTime}</div>
     </div>
   );
 };

@@ -6,7 +6,7 @@ import SpotifyLogin from "react-spotify-login";
 import Search from "./containers/Search";
 
 import { connect } from "react-redux";
-import { SET_TRACKS, LOG_IN } from "./actions/Actions";
+import { LOG_IN } from "./actions/Actions";
 export const clientId = "a256c7c1a8f645d7878d3b9b6eefe11b";
 
 export const redirectUri =
@@ -14,21 +14,6 @@ export const redirectUri =
     ? "http://localhost:3000/"
     : "http://lukgor.webd.pl/react/";
 
-// const getPlaylist = (token, dispatch) => {
-//   fetch(
-//     "https://api.spotify.com/v1/artists/57vWImR43h4CaDao012Ofp/top-tracks?country=SE",
-//     {
-//       headers: {
-//         Authorization: `Bearer ${token}`
-//       }
-//     }
-//   )
-//     .then(response => response.json())
-//     .then(data => {
-//       console.log(data);
-//       dispatch({ type: SET_TRACKS, data: data.tracks });
-//     });
-// };
 const mapDispatchToProps = dispatch => {
   return {
     logIn: data => {
@@ -49,7 +34,6 @@ function mapStateToProps(state) {
 const App = ({ logged, logIn, dispatch }) => {
   const onSuccess = response => {
     logIn(response.access_token);
-    // getPlaylist(response.access_token, dispatch);
   };
   const onFailure = response => {
     console.error(response);

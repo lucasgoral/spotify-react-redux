@@ -18,12 +18,7 @@ function mapStateToProps(state) {
 
 const Search = ({ token, search }) => {
   const searchInput = useRef();
-  //   const handleSubmit = e => {
-  //     e.preventDefault();
-  //     console.log("on submit");
-  //     console.log({ item: searchInput.current });
-  //     console.log(token);
-  //   };
+
   const handleSubmit = e => {
     e.preventDefault();
     search(token, searchInput.current.value);

@@ -25,8 +25,7 @@ const Playlist = ({ tracks, dispatch, active }) => {
                       : "Playlist__item"
                   }
                   onClick={() => {
-                    setTrack(index);
-                    console.log("elo");
+                    dispatch(setTrack(index));
                   }}
                 >
                   <div
@@ -43,7 +42,7 @@ const Playlist = ({ tracks, dispatch, active }) => {
                 </button>
               </li>
             );
-          } else return null;
+          }
         })}
       </ul>
     </div>

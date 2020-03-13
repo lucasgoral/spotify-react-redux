@@ -1,96 +1,73 @@
 .Player {
-
-  overflow: hidden;
-  padding: 30px;
-
-
-
-  &__header {
-    overflow: visible;
-    height: 162px;
-
-  }
-
-  &__image-wrapper {
-    float: left;
-    width: 132px;
-    height: 132px;
-    overflow: visible;
-    position: relative;
-    margin-right: 30px;
-    margin-bottom: 30px;
-    background: rgba(0, 0, 0, 0.1);
-
-  }
-
-  &__image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    overflow: visible;
-    border-radius: 4px;
-    transition: background-image 0.4s;
-
-
-
-  }
-
-  &__image-shadow {
-
-    position: absolute;
-    top: 15px;
-    left: 0;
-    right: 0;
-    bottom: -15px;
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    overflow: visible;
-    border-radius: 4px;
-    filter: blur(20px);
-    opacity: 0.5;
-    transition: background-image 0.4s;
-
-
-  }
-
-  &__info {
-    padding: 0;
-    float: left;
-    text-align: left;
-
-    max-width: calc(100% - 165px);
-    
-
-
-    h1 {
-      font-size: 20px;
-
-      @media (max-width: 768px) {
-        font-size: 18px;
-      }
-
+    overflow: hidden;
+    padding: 30px;
+    background-color: rgba(71, 47, 145, 0.15);
+    &__header {
+        overflow: visible;
+        height: 162px;
     }
-
-    h2 {
-      font-size: 12px;
-      text-transform: uppercase;
-
-      @media (max-width: 768px) {
-        font-size: 10px;
-      }
+    &__image-wrapper {
+        float: left;
+        width: 132px;
+        height: 132px;
+        overflow: visible;
+        position: relative;
+        margin-right: 30px;
+        margin-bottom: 30px;
+        background: rgba(0, 0, 0, 0.1);
     }
-  }
-
-  &__controls {
-    align-items: center;
-    display: flex;
-    flex-wrap: nowrap;
-    min-width: 100%;
-  }
+    &__image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        overflow: visible;
+        border-radius: 4px;
+        transition: background-image 0.4s;
+    }
+    &__image-shadow {
+        position: absolute;
+        top: 15px;
+        left: 0;
+        right: 0;
+        bottom: -15px;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        overflow: visible;
+        border-radius: 4px;
+        filter: blur(20px);
+        opacity: 0.5;
+        transition: background-image 0.4s;
+    }
+    &__info {
+        padding: 0;
+        float: left;
+        text-align: left;
+        color: #472f91;
+        max-width: calc(100% - 165px);
+        h1 {
+            font-size: 20px;
+            @media (max-width: 768px) {
+                font-size: 18px;
+            }
+        }
+        h2 {
+            font-size: 12px;
+            text-transform: uppercase;
+            @media (max-width: 768px) {
+                font-size: 10px;
+            }
+        }
+    }
+    &__controls {
+        align-items: center;
+        display: flex;
+        flex-wrap: nowrap;
+        min-width: 100%;
+    }
 }

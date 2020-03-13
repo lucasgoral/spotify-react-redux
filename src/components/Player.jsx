@@ -5,19 +5,20 @@ import Sound from "./Sound";
 import { connect } from "react-redux";
 
 const mapStateToProps = state => {
+  const tracks = state.playlist.tracks;
   const trackNumber = state.player.trackNumber;
 
-  if (state.playlist.tracks.length > 0) {
+  if (tracks.length > 0) {
     return {
-      artistName: state.playlist.tracks[trackNumber].album.artists[0].name,
-      songName: state.playlist.tracks[trackNumber].name,
-      image: state.playlist.tracks[trackNumber].album.images[0].url,
-      mp3Url: state.playlist.tracks[trackNumber].preview_url
+      artistName: tracks[trackNumber].album.artists[0].name,
+      songName: tracks[trackNumber].name,
+      image: tracks[trackNumber].album.images[0].url,
+      mp3Url: tracks[trackNumber].preview_url
     };
   }
   return {
-    artistName: "",
-    songName: "",
+    artistName: "Artist",
+    songName: "Song title",
     image: "",
     mp3Url: ""
   };
@@ -25,7 +26,7 @@ const mapStateToProps = state => {
 
 const Player = ({ artistName, image, songName, mp3Url }) => {
   return (
-    <div className="Player" style={{ background: "rgba(71,47,145,0.15)" }}>
+    <div className="Player">
       <div className="Player__header">
         <div className="Player__image-wrapper">
           <div
@@ -38,7 +39,7 @@ const Player = ({ artistName, image, songName, mp3Url }) => {
             style={{ backgroundImage: `url("${image}")` }}
           />
         </div>
-        <div className="Player__info" style={{ color: "#472F91" }}>
+        <div className="Player__info">
           <h1>{artistName}</h1>
 
           <h2>{songName}</h2>

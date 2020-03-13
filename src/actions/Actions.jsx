@@ -25,12 +25,8 @@ export const searchTracks = (token, query) => {
 };
 
 export const setTrack = trackNumber => {
-  console.log("track is set");
-  console.log(trackNumber);
-  return dispatch => {
-    dispatch({
-      type: SET_TRACK,
-      trackNumber: trackNumber
-    });
+  return {
+    type: SET_TRACK,
+    trackNumber: trackNumber
   };
 };

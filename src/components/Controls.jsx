@@ -5,7 +5,7 @@ import Previous from "../images/Previous.svg";
 import Pause from "../images/Pause.svg";
 import Play from "../images/Play.svg";
 import Next from "../images/Next.svg";
-import { SET_TRACK } from "../actions/Actions";
+import { setTrack } from "../actions/Actions";
 
 const mapStateToProps = (state, props) => {
   return {
@@ -22,12 +22,12 @@ const Controls = ({ state, props, dispatch, trackNumber }) => {
       state.playlist.tracks.length - 1 > trackNumber
         ? trackNumber + 1
         : trackNumber;
-    dispatch({ type: SET_TRACK, trackNumber: nextItemNumber });
+    dispatch(setTrack(nextItemNumber));
   };
 
   const playPrev = () => {
     const prevItemNumber = trackNumber > 0 ? trackNumber - 1 : trackNumber;
-    dispatch({ type: SET_TRACK, trackNumber: prevItemNumber });
+    dispatch(setTrack(prevItemNumber));
   };
 
   return (

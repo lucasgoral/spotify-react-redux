@@ -16,6 +16,15 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
+$primary-color: #0b2e59;
+$primary-light: lighten($primary-color,
+75%);
+$primary-dark: darken($primary-color,
+20%);
+$secondary-color: #555;
+$third-color: #0d6759;
+$primary-accent: #7ab317;
+$secondary-accent: #a0c55f;
 @import "app";
 @import "controls";
 @import "player";

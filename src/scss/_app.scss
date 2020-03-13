@@ -12,7 +12,7 @@ div {
     transform: translateY(-50%) translateX(-50%);
     border-radius: 0.5em;
     border: 0;
-    background: #472f91;
+    background: $primary-color;
     cursor: pointer;
     transition: opacity 0.4s;
     &:hover {

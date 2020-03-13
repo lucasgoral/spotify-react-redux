@@ -1,7 +1,7 @@
 .Player {
     overflow: hidden;
     padding: 30px;
-    background-color: rgba(71, 47, 145, 0.15);
+    background-color: $primary-light;
     &__header {
         overflow: visible;
         height: 162px;
@@ -48,7 +48,7 @@
         padding: 0;
         float: left;
         text-align: left;
-        color: #472f91;
+        color: $primary-color;
         max-width: calc(100% - 165px);
         h1 {
             font-size: 20px;

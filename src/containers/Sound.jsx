@@ -1,6 +1,16 @@
 import React from "react";
-import Controls from "./Controls";
-import ProgressBar from "./ProgressBar";
+import PlaybackControls from "../components/PlaybackControls";
+import ProgressBar from "../components/ProgressBar";
+import { connect } from "react-redux";
+import { setTrack } from "../actions/Actions";
+
+const mapStateToProps = state => {
+  return {
+    tracks: state.playlist.tracks,
+    trackNumber: state.player.trackNumber,
+    playlist: state.playlist.tracks
+  };
+};
 
 class Sound extends React.Component {
   constructor(props) {
@@ -8,6 +18,7 @@ class Sound extends React.Component {
     this.props = props;
     this.audio = null;
     this.mp3Url = this.props.mp3Url;
+    console.log(this.props);
 
     this.state = {
       duration: 0,
@@ -21,6 +32,21 @@ class Sound extends React.Component {
     if (this.mp3Url !== this.props.mp3Url) {
       this.handleMusicPlay();
     }
+  }
+  playNext() {
+    const nextItemNumber =
+      this.props.tracks.length - 1 > this.props.trackNumber
+        ? this.props.trackNumber + 1
+        : this.props.trackNumber;
+    this.props.dispatch(setTrack(nextItemNumber));
+  }
+
+  playPrev() {
+    const prevItemNumber =
+      this.props.trackNumber > 0
+        ? this.props.trackNumber - 1
+        : this.props.trackNumber;
+    this.props.dispatch(setTrack(prevItemNumber));
   }
 
   play() {
@@ -73,12 +99,15 @@ class Sound extends React.Component {
   render() {
     return (
       <div className="Player__controls">
-        <Controls
+        <PlaybackControls
           toggle={() => {
             this.toggle();
           }}
           isPaused={this.state.isPaused}
-        ></Controls>
+          playNext={this.playNext.bind(this)}
+          playPrev={this.playPrev.bind(this)}
+        />
+
         <ProgressBar
           seekTime={value => {
             this.seekTime(value);
@@ -92,4 +121,4 @@ class Sound extends React.Component {
   }
 }
 
-export default Sound;
+export default connect(mapStateToProps)(Sound);

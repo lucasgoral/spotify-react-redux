@@ -1,5 +1,5 @@
 import React from "react";
-import Sound from "../containers/Sound";
+import Sound from "./Sound";
 import { connect } from "react-redux";
 
 const mapStateToProps = state => {

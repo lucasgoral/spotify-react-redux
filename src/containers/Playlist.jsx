@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { setTrack } from "./../actions/Actions";
+import { setTrack } from "../actions/Actions";
 
 const mapStateToProps = state => {
   return {

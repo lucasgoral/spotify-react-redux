@@ -1,7 +1,7 @@
 import React from "react";
 import "./scss/index.scss";
-import Player from "./components/Player";
-import Playlist from "./components/Playlist";
+import Player from "./containers/Player";
+import Playlist from "./containers/Playlist";
 import SpotifyLogin from "react-spotify-login";
 import Search from "./containers/Search";
 

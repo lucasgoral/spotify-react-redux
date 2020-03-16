@@ -1,0 +1,26 @@
+.Search {
+    background: lighten($primary-color, 72%);
+    
+   padding:30px;
+
+    &__input {
+      background: #FFF;
+      border: 0;
+      border-radius: 3px;
+      padding: 0.5rem;
+      margin-right: 0.5rem;
+      border: 1px solid lighten($primary-color, 20%);
+    }
+    &__bt {
+      background: $primary-color;
+      border: 0;
+      border-radius: 3px;
+      padding: 0.5rem 1rem;
+      color: #FFF;
+      transition: background-color .2s;
+      &:focus, &:hover {
+          
+          background: lighten($primary-color, 10%);
+      }
+    }
+}

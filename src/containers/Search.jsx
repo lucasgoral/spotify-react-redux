@@ -25,10 +25,10 @@ const Search = ({ token, search }) => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input name="search" ref={searchInput}></input>
-        <button type="submit">Search</button>
+    <div className="Search">
+      <form onSubmit={handleSubmit} >
+        <input name="search" ref={searchInput} className="Search__input" placeholder="Search"></input>
+        <button type="submit" className="Search__bt">Search</button>
       </form>
     </div>
   );

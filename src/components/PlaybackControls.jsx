@@ -1,10 +1,9 @@
-import { connect } from "react-redux";
+
 import React from "react";
 import Previous from "../images/Previous.svg";
 import Pause from "../images/Pause.svg";
 import Play from "../images/Play.svg";
 import Next from "../images/Next.svg";
-import { setTrack } from "../actions/Actions";
 
 const PlaybackControls = ({ playPrev, playNext, isPaused, toggle }) => {
   return (

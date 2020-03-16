@@ -10,8 +10,14 @@ const mapStateToProps = state => {
 };
 
 const Playlist = ({ tracks, dispatch, active }) => {
+
   return (
     <div className="Playlist">
+     { (tracks.length === 0) ?
+     <p className="Playlist__error">No results. Please use search field.</p> : null
+      
+      }
+ 
       <ul className="Playlist__list">
         {tracks.map((track, index) => {
           if (track.preview_url) {
@@ -42,7 +48,7 @@ const Playlist = ({ tracks, dispatch, active }) => {
               </li>
             );
           }
-          return;
+          return null;
         })}
       </ul>
     </div>

@@ -1,12 +1,13 @@
 import React, { useRef } from "react";
 import { connect } from "react-redux";
-import { searchTracks } from "../actions/Actions";
+import { searchTracks, setTrack } from "../actions/Actions";
 
 const mapDispatchToProps = dispatch => {
   return {
     search: (token, query) => {
       dispatch(searchTracks(token, query));
-    }
+    },
+    goToFirstTrack: ()=> {dispatch(setTrack(0))}
   };
 };
 
@@ -16,12 +17,15 @@ function mapStateToProps(state) {
   };
 }
 
-const Search = ({ token, search }) => {
+const Search = ({ token, search, goToFirstTrack }) => {
   const searchInput = useRef();
 
   const handleSubmit = e => {
     e.preventDefault();
+
     search(token, searchInput.current.value);
+    goToFirstTrack();
+
   };
 
   return (

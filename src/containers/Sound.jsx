@@ -79,7 +79,7 @@ class Sound extends React.Component {
   handleMusicPlay() {
     this.mp3Url = this.props.mp3Url;
     if (this.audio) {
-      this.pause();
+      // this.pause();
       this.audio.setAttribute("src", this.props.mp3Url); 
       this.audio.load();
     } else {
@@ -91,6 +91,10 @@ class Sound extends React.Component {
           percent: (this.audio.currentTime * 100) / this.audio.duration
         });
       });
+      this.audio.addEventListener("ended", () => {  
+this.playNext();
+       });
+
     }
     this.play();
   }

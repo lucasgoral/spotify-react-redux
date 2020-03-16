@@ -1,4 +1,3 @@
-
 import React from "react";
 import Previous from "../images/Previous.svg";
 import Pause from "../images/Pause.svg";

@@ -7,7 +7,9 @@ const mapDispatchToProps = dispatch => {
     search: (token, query) => {
       dispatch(searchTracks(token, query));
     },
-    goToFirstTrack: ()=> {dispatch(setTrack(0))}
+    goToFirstTrack: () => {
+      dispatch(setTrack(0));
+    }
   };
 };
 
@@ -25,14 +27,20 @@ const Search = ({ token, search, goToFirstTrack }) => {
 
     search(token, searchInput.current.value);
     goToFirstTrack();
-
   };
 
   return (
     <div className="Search">
-      <form onSubmit={handleSubmit} >
-        <input name="search" ref={searchInput} className="Search__input" placeholder="Search"></input>
-        <button type="submit" className="Search__bt">Search</button>
+      <form onSubmit={handleSubmit}>
+        <input
+          name="search"
+          ref={searchInput}
+          className="Search__input"
+          placeholder="Search"
+        ></input>
+        <button type="submit" className="Search__bt">
+          Search
+        </button>
       </form>
     </div>
   );

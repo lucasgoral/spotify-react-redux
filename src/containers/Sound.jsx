@@ -36,15 +36,16 @@ class Sound extends React.Component {
   playNext() {
     const trackNumber = this.props.trackNumber;
     const nextItemNumber =
-      this.props.tracks.length - 1 > trackNumber      ? trackNumber + 1    : trackNumber;
+      this.props.tracks.length - 1 > trackNumber
+        ? trackNumber + 1
+        : trackNumber;
     this.props.dispatch(setTrack(nextItemNumber));
   }
 
   playPrev() {
     const trackNumber = this.props.trackNumber;
-    const prevItemNumber =
-      trackNumber > 0   ? trackNumber - 1  : trackNumber;
-        this.props.dispatch(setTrack(prevItemNumber));
+    const prevItemNumber = trackNumber > 0 ? trackNumber - 1 : trackNumber;
+    this.props.dispatch(setTrack(prevItemNumber));
   }
 
   play() {
@@ -80,7 +81,7 @@ class Sound extends React.Component {
     this.mp3Url = this.props.mp3Url;
     if (this.audio) {
       // this.pause();
-      this.audio.setAttribute("src", this.props.mp3Url); 
+      this.audio.setAttribute("src", this.props.mp3Url);
       this.audio.load();
     } else {
       this.audio = new Audio(this.props.mp3Url);
@@ -91,10 +92,9 @@ class Sound extends React.Component {
           percent: (this.audio.currentTime * 100) / this.audio.duration
         });
       });
-      this.audio.addEventListener("ended", () => {  
-this.playNext();
-       });
-
+      this.audio.addEventListener("ended", () => {
+        this.playNext();
+      });
     }
     this.play();
   }

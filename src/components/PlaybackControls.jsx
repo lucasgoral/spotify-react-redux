@@ -4,14 +4,23 @@ import Pause from "../images/Pause.svg";
 import Play from "../images/Play.svg";
 import Next from "../images/Next.svg";
 
-const PlaybackControls = ({ playPrev, playNext, isPaused, toggle }) => {
+const PlaybackControls = ({
+  playPrev,
+  playNext,
+  isPaused,
+  toggle,
+  isLoading
+}) => {
   return (
     <div className="Controls">
       <div className="Controls__buttons">
         <button className="Controls__prev" onClick={playPrev}>
           <img src={Previous} alt="Previous" />
         </button>
-        <button className="Controls__toggle" onClick={toggle}>
+        <button
+          className={`Controls__toggle ${isLoading ? "loading" : ""}`}
+          onClick={toggle}
+        >
           <img src={isPaused ? Play : Pause} alt="Play/Pause" />
         </button>
         <button className="Controls__next" onClick={playNext}>

@@ -32,7 +32,7 @@ const Search = ({ token, search, goToFirstTrack, isLoading }) => {
 
   return (
     <div className="Search">
-      <form onSubmit={handleSubmit} className="Search__form">
+      <form onSubmit={handleSubmit} className="Search__form" action="post">
         <input
           name="search"
           ref={searchInput}

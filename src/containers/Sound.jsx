@@ -23,7 +23,8 @@ class Sound extends React.Component {
       duration: 0,
       currentTime: 0,
       percent: 0,
-      isPaused: false
+      isPaused: false,
+      isLoading: false
     };
   }
 
@@ -80,10 +81,10 @@ class Sound extends React.Component {
     this.mp3Url = this.props.mp3Url;
     if (this.audio) {
       // this.pause();
-      this.audio.setAttribute("src", this.props.mp3Url);
+      this.audio.setAttribute("src", this.mp3Url);
       this.audio.load();
     } else {
-      this.audio = new Audio(this.props.mp3Url);
+      this.audio = new Audio(this.mp3Url);
       this.audio.addEventListener("timeupdate", () => {
         this.setState({
           duration: this.audio.duration,
@@ -93,6 +94,12 @@ class Sound extends React.Component {
       });
       this.audio.addEventListener("ended", () => {
         this.playNext();
+      });
+      this.audio.addEventListener("loadstart", () => {
+        this.setState({ isLoading: true });
+      });
+      this.audio.addEventListener("canplay", () => {
+        this.setState({ isLoading: false });
       });
     }
     this.play();
@@ -107,6 +114,7 @@ class Sound extends React.Component {
           isPaused={this.state.isPaused}
           playNext={this.playNext.bind(this)}
           playPrev={this.playPrev.bind(this)}
+          isLoading={this.state.isLoading}
         />
 
         <ProgressBar

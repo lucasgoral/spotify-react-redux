@@ -1,16 +1,23 @@
+import {SEARCH_LOADING, SET_TRACKS} from "../actions/Actions";
 const initialState = {
-  tracks: []
+  tracks: [],
+  isLoading: false
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case "SET_TRACKS":
+    case SET_TRACKS:
       return {
-        tracks: [...action.data].filter(item => item.preview_url)
+        ...state,
+        tracks: [...action.data].filter(item => item.preview_url),
+        isLoading: false
       };
+    case SEARCH_LOADING:
+    console.log('search loading')
+      return { ...state, isLoading: true };
     default:
       return state;
   }
 };
 
-export { reducer as playlist };
+export { reducer as playList };

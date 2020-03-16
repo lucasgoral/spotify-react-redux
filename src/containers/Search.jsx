@@ -15,11 +15,12 @@ const mapDispatchToProps = dispatch => {
 
 function mapStateToProps(state) {
   return {
-    token: state.auth.access_token
+    token: state.auth.access_token,
+    isLoading: state.playList.isLoading
   };
 }
 
-const Search = ({ token, search, goToFirstTrack }) => {
+const Search = ({ token, search, goToFirstTrack, isLoading }) => {
   const searchInput = useRef();
 
   const handleSubmit = e => {
@@ -28,19 +29,20 @@ const Search = ({ token, search, goToFirstTrack }) => {
     search(token, searchInput.current.value);
     goToFirstTrack();
   };
-
+  console.log(isLoading);
   return (
     <div className="Search">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="Search__form">
         <input
           name="search"
           ref={searchInput}
           className="Search__input"
           placeholder="Search"
         ></input>
-        <button type="submit" className="Search__bt">
+        <button type="submit" className={`Search__bt`}>
           Search
         </button>
+        {isLoading ? <span className="Search__loading"></span> : ""}
       </form>
     </div>
   );

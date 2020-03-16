@@ -3,7 +3,7 @@ import Sound from "../containers/Sound";
 import { connect } from "react-redux";
 
 const mapStateToProps = state => {
-  const tracks = state.playlist.tracks;
+  const tracks = state.playList.tracks;
   const trackNumber = state.player.trackNumber;
 
   if (tracks.length > 0) {

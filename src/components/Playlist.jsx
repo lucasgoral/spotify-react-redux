@@ -4,7 +4,7 @@ import { setTrack } from "./../actions/Actions";
 
 const mapStateToProps = state => {
   return {
-    tracks: state.playlist.tracks,
+    tracks: state.playList.tracks,
     active: state.player.trackNumber
   };
 };

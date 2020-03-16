@@ -1,4 +1,4 @@
-import {SEARCH_LOADING, SET_TRACKS} from "../actions/Actions";
+import { SEARCH_LOADING, SET_TRACKS } from "../actions/Actions";
 const initialState = {
   tracks: [],
   isLoading: false
@@ -13,7 +13,6 @@ const reducer = (state = initialState, action) => {
         isLoading: false
       };
     case SEARCH_LOADING:
-    console.log('search loading')
       return { ...state, isLoading: true };
     default:
       return state;

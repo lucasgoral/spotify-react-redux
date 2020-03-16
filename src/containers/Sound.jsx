@@ -18,7 +18,6 @@ class Sound extends React.Component {
     this.props = props;
     this.audio = null;
     this.mp3Url = this.props.mp3Url;
-    console.log(this.props);
 
     this.state = {
       duration: 0,

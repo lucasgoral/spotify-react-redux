@@ -29,7 +29,7 @@ const Search = ({ token, search, goToFirstTrack, isLoading }) => {
     search(token, searchInput.current.value);
     goToFirstTrack();
   };
-  console.log(isLoading);
+
   return (
     <div className="Search">
       <form onSubmit={handleSubmit} className="Search__form">

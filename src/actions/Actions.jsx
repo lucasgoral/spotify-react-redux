@@ -23,6 +23,10 @@ export const searchTracks = (token, query) => {
         } else {
           dispatch(setTracks([]));
         }
+      })
+      .catch(e => {
+        dispatch(setTracks([]));
+        console.error(e);
       });
   };
 };

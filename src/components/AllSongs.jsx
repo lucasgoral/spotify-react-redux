@@ -1,8 +1,8 @@
-import React from 'react'
+import React from "react";
 
 export default function AllSongs({ tracks, setTrack, active }) {
-    return (
-      <div className="Playlist">
+  return (
+    <div className="Playlist">
       {tracks.length === 0 ? (
         <p className="Playlist__error">No results. Please use search field.</p>
       ) : null}
@@ -19,7 +19,7 @@ export default function AllSongs({ tracks, setTrack, active }) {
                       : "Playlist__item"
                   }
                   onClick={() => {
-                   setTrack(index);
+                    setTrack(index);
                   }}
                 >
                   <div
@@ -41,5 +41,5 @@ export default function AllSongs({ tracks, setTrack, active }) {
         })}
       </ul>
     </div>
-    )
+  );
 }

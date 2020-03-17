@@ -1,6 +1,6 @@
 import React from "react";
 import Sound from "./Sound";
-import CurrentSong from "../components/CurrentSong"
+import CurrentSong from "../components/CurrentSong";
 import { connect } from "react-redux";
 
 const mapStateToProps = state => {
@@ -26,8 +26,8 @@ const mapStateToProps = state => {
 const Player = ({ artistName, image, songName, mp3Url }) => {
   return (
     <div className="Player">
-    <CurrentSong artistName={artistName} image={image} songName={songName} />
-    <Sound mp3Url={mp3Url} />
+      <CurrentSong artistName={artistName} image={image} songName={songName} />
+      <Sound mp3Url={mp3Url} />
     </div>
   );
 };

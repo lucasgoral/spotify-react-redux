@@ -1,5 +1,6 @@
 import React from "react";
 import Sound from "./Sound";
+import CurrentSong from "../components/CurrentSong"
 import { connect } from "react-redux";
 
 const mapStateToProps = state => {
@@ -25,24 +26,7 @@ const mapStateToProps = state => {
 const Player = ({ artistName, image, songName, mp3Url }) => {
   return (
     <div className="Player">
-      <div className="Player__header">
-        <div className="Player__image-wrapper">
-          <div
-            className="Player__image-shadow"
-            style={{ backgroundImage: `url("${image}")` }}
-          />
-
-          <div
-            className="Player__image"
-            style={{ backgroundImage: `url("${image}")` }}
-          />
-        </div>
-        <div className="Player__info">
-          <h1>{artistName}</h1>
-
-          <h2>{songName}</h2>
-        </div>
-      </div>
+    <CurrentSong artistName={artistName} image={image} songName={songName} />
       <Sound mp3Url={mp3Url} />
     </div>
   );

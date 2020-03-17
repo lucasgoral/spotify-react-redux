@@ -12,7 +12,7 @@ export const clientId = "a256c7c1a8f645d7878d3b9b6eefe11b";
 export const redirectUri =
   process.env.NODE_ENV === "development"
     ? "http://localhost:3000/"
-    : "http://lukgor.webd.pl/react/";
+    : "http://lukgor.webd.pl/react-spotify/";
 
 const mapDispatchToProps = dispatch => {
   return {

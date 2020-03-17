@@ -7,7 +7,7 @@ import Search from "./containers/Search";
 
 import { connect } from "react-redux";
 import { LOG_IN } from "./actions/Actions";
-export const clientId = "a256c7c1a8f645d7878d3b9b6eefe11b";
+export const clientId = "6b073b0b3ab54889819e450880185561";
 
 export const redirectUri =
   process.env.NODE_ENV === "development"

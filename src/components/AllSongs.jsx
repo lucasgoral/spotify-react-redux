@@ -1,0 +1,45 @@
+import React from 'react'
+
+export default function AllSongs({ tracks, setTrack, active }) {
+    return (
+      <div className="Playlist">
+      {tracks.length === 0 ? (
+        <p className="Playlist__error">No results. Please use search field.</p>
+      ) : null}
+
+      <ul className="Playlist__list">
+        {tracks.map((track, index) => {
+          if (track.preview_url) {
+            return (
+              <li key={track.id}>
+                <button
+                  className={
+                    active === index
+                      ? "Playlist__item active"
+                      : "Playlist__item"
+                  }
+                  onClick={() => {
+                   setTrack(index);
+                  }}
+                >
+                  <div
+                    className="Playlist__image"
+                    style={{
+                      backgroundImage: `url("${track.album.images[0].url}")`
+                    }}
+                  />
+
+                  <div className="Playlist__info">
+                    <h3>{track.artists[0].name}</h3>
+                    <h4>{track.name}</h4>
+                  </div>
+                </button>
+              </li>
+            );
+          }
+          return null;
+        })}
+      </ul>
+    </div>
+    )
+}

@@ -27,7 +27,7 @@ const Player = ({ artistName, image, songName, mp3Url }) => {
   return (
     <div className="Player">
     <CurrentSong artistName={artistName} image={image} songName={songName} />
-      <Sound mp3Url={mp3Url} />
+    <Sound mp3Url={mp3Url} />
     </div>
   );
 };
